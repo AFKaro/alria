@@ -25,10 +25,12 @@ export const Bar = styled(Box)`
     border-radius: 25px;
 `;
 
+export const Content = styled(Box)`
+    width: 100vw;
+    margin-top: 23%;
+`;
+
 export const Title = styled(Typography)`
-    position: absolute;
-    top: 50%;
-    left: 38%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
     font-family: "Belleza";
@@ -38,9 +40,6 @@ export const Title = styled(Typography)`
 `;
 
 export const SubTitle = styled(Typography)`
-    position: absolute;
-    top: 62%;
-    left: 24%;
     margin-right: -50%;
     transform: translate(-50%, -50%)
     color: ${theme.palette.common.white};
@@ -50,12 +49,6 @@ export const ImgStyled = styled("img")`
     position: absolute;
     width: 1200px;
     height: 742px;
-    left: 0px;
-    top: -53px;
-`;
-
-export const IconButtonStyled = styled(IconButton)`
-    position: absolute;
-    left: -50px;
-    top: 600px;
+    left: -30px;
+    top: -70px;
 `;

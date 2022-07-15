@@ -1,12 +1,12 @@
 import { CSSProperties } from "react";
 import { createTheme } from "@mui/material";
 
-const headersFontsize = [40, 24, 18, 16, 14, 12];
+const headersFontsize = [90, 40, 24, 18, 16, 14, 12];
 const headersVariants: CSSProperties = {
     marginBottom: 0,
-    color: "#333333",
+    color: "#9709DA",
     fontWeight: "bold",
-    fontFamily: "Ubuntu",
+    fontFamily: "Bellota Text",
 };
 
 const theme = createTheme({
@@ -16,13 +16,13 @@ const theme = createTheme({
             white: "#FFFFFF",
         },
         primary: {
-            main: "#461D7B",
+            main: "#0F0119",
         },
         secondary: {
-            main: "#51D591",
+            main: "#9709DA",
         },
         background: {
-            default: "#FFFFFF",
+            default: "#EEEAF2",
         },
         success: {
             main: "#2E7D32",
@@ -35,8 +35,8 @@ const theme = createTheme({
             dark: "#B52424",
         },
         text: {
-            primary: "#333333",
-            secondary: "#C2C9D1",
+            primary: "#9709DA",
+            secondary: "#000000",
         },
         grey: {
             "200": "#f2f2f2",
@@ -49,7 +49,7 @@ const theme = createTheme({
     typography: {
         fontSize: 16,
         htmlFontSize: 16,
-        fontFamily: ["Ubuntu", "sans-serif"].join(","),
+        fontFamily: ["Bellota Text", "Belleza"].join(","),
         body1: {
             fontSize: 16,
             fontWeight: 500,

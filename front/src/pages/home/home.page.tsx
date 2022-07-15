@@ -1,9 +1,9 @@
 import Logo from "../../assets/aurea.icon.svg";
 import { useNavigate } from "react-router-dom";
 import LinksEnum from "../../utils/enums/links.enum";
-import { Stack } from "@mui/material";
+import { IconButton, Stack } from "@mui/material";
 import { Play, GithubLogo, LinkedinLogo} from "phosphor-react";
-import { Container, ImgStyled, Title, SubTitle, IconButtonStyled, Bar } from "./home.styles";
+import { Container, ImgStyled, Title, SubTitle, Bar, Content } from "./home.styles";
 import RoutesEnum from "../../utils/enums/routes.enum";
 import ButtonStyled from "../../components/button/button.component";
 
@@ -32,14 +32,18 @@ function Home() {
             </Bar>
             
             <ImgStyled id="logo" src={Logo} alt="Logo ALRIA" />
-            <Title variant="h1">ALRIA</Title>
-            <SubTitle variant="h2">Literature Review Intelligent Assistent</SubTitle>
 
-            <IconButtonStyled 
-                onClick={() => navigate(RoutesEnum.LiteratureReview)}
-                sx={{ "color":"#9709DA", "&:hover": { color: "white" } }}>
-                {<Play size={32} />}
-            </IconButtonStyled>
+            <Content>
+                <Title variant="h1">ALRIA</Title>
+                <SubTitle variant="h2">Literature Review Intelligent Assistent</SubTitle>
+
+                <IconButton 
+                    onClick={() => navigate(RoutesEnum.LiteratureReview)}
+                    sx={{ "color":"#9709DA", "&:hover": { color: "white" } }}>
+                    {<Play size={40} />}
+                </IconButton>
+            </Content>
+            
         </Container>
     </>
 }

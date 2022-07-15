@@ -1,5 +1,6 @@
 import { Content } from "./default.styles";
 import Menu from "../../components/menu/menu.component";
+import { Stack } from "@mui/material";
 
 interface DefaultLayoutProps {
     children: React.ReactNode;
@@ -8,8 +9,10 @@ interface DefaultLayoutProps {
 function DefaultLayout({ children }: DefaultLayoutProps) {
     return (
         <>
-            <Menu />
-            <Content>{children}</Content>
+            <Stack direction="row">
+                <Menu />
+                {children}
+            </Stack>
         </>
     );
 }

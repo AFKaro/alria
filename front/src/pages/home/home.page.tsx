@@ -1,31 +1,42 @@
-import { Button, IconButton, Stack } from "@mui/material";
-import { Container, ImgStyled, Title, SubTitle, IconButtonStyled, Bar } from "./home.styles";
 import Logo from "../../assets/aurea.icon.svg";
-import { Play, GithubLogo, LinkedinLogo} from "phosphor-react";
+import { useNavigate } from "react-router-dom";
 import LinksEnum from "../../utils/enums/links.enum";
+import { Stack } from "@mui/material";
+import { Play, GithubLogo, LinkedinLogo} from "phosphor-react";
+import { Container, ImgStyled, Title, SubTitle, IconButtonStyled, Bar } from "./home.styles";
+import RoutesEnum from "../../utils/enums/routes.enum";
+import ButtonStyled from "../../components/button/button.component";
 
 function Home() {
+    const navigate = useNavigate();
+
     return <>
         <Container>
             <Bar>
                 <Stack spacing={2}>
-                    <IconButton size="medium" 
+                    <ButtonStyled 
                         onClick={() => window.open(LinksEnum.GitHub)}
-                        sx={{ "color":"black", "&:hover": { color: "#9709DA" } }}>
-                        {<GithubLogo size={32} />}
-                    </IconButton>
-                    <IconButton size="medium" 
+                        style="secondary"
+                        icon={<GithubLogo size={32} />}
+                        isTooltip={false}
+                        isLink={true}
+                    />
+                    <ButtonStyled 
                         onClick={() => window.open(LinksEnum.Linkedin)}
-                        sx={{ "color":"black", "&:hover": { color: "#9709DA" } }}>
-                        {<LinkedinLogo size={32} />}
-                    </IconButton>
+                        style="secondary"
+                        icon={<LinkedinLogo size={32} />}
+                        isTooltip={false}
+                        isLink={true}
+                    />
                 </Stack>
             </Bar>
             
             <ImgStyled id="logo" src={Logo} alt="Logo ALRIA" />
             <Title variant="h1">ALRIA</Title>
             <SubTitle variant="h2">Literature Review Intelligent Assistent</SubTitle>
-            <IconButtonStyled size="medium" 
+
+            <IconButtonStyled 
+                onClick={() => navigate(RoutesEnum.LiteratureReview)}
                 sx={{ "color":"#9709DA", "&:hover": { color: "white" } }}>
                 {<Play size={32} />}
             </IconButtonStyled>
@@ -34,3 +45,4 @@ function Home() {
 }
 
 export default Home;
+

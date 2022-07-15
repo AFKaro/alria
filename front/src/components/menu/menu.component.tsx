@@ -1,29 +1,26 @@
+import Logo from "../../assets/aurea.icon.svg";
 import { useNavigate } from "react-router-dom";
+import { Box, MenuList, Tooltip } from "@mui/material";
 import RoutesEnum from "../../utils/enums/routes.enum";
-import { IconButtonStyled, Container } from "./menu.styles";
-import { MenuItem, MenuList, Paper, Tooltip } from "@mui/material";
 import { Book, Brain, Info, Quotes } from "phosphor-react";
+import { Container, PaperStyled, ImageBox } from "./menu.styles";
+import ButtonStyled from "../button/button.component";
 
 const options = [
     {
-        icon: <Book color="white" size={32} />,
+        icon: <Book size={32} weight="bold" />,
         path: RoutesEnum.LiteratureReview,
         tooltip: "Tools for Literature Reviews",
     },
     {
-        icon: <Brain color="white" size={32} />,
+        icon: <Brain size={32} weight="bold" />,
         path: RoutesEnum.ScientificResearch,
         tooltip: "Tools for Scientific Research",
     },
     {
-        icon: <Info color="white" size={32} />,
+        icon: <Info size={32} weight="bold" />,
         path: RoutesEnum.Info,
         tooltip: "Tips and information",
-    },
-    {
-        icon: <Quotes color="white" size={32} />,
-        path: RoutesEnum.Cite,
-        tooltip: "Cite",
     },
 ];
 
@@ -31,27 +28,41 @@ const options = [
 function Menu() {
     const navigate = useNavigate();
 
-    return <Paper>
+    return <PaperStyled>
                 <Container>
-                    <MenuList>
-                        {options.map(option => (
-                            <Tooltip
-                                key={option.path}
-                                title={option.tooltip}
-                            >
-                                <IconButtonStyled
-                                    size="medium"
-                                    onClick={() =>
-                                        navigate(option.path)
-                                    }
-                                >
-                                    {option.icon}
-                                </IconButtonStyled>
-                            </Tooltip>
-                        ))}
+                    <ImageBox>
+                       <ButtonStyled
+                        onClick={() =>navigate(RoutesEnum.Root)}
+                        icon={<img id="logo" src={Logo} alt="Logo ALRIA" />}
+                        style={"primary"}
+                        hoverDisabled={true}
+                        /> 
+                    </ImageBox>
+                    
+                    {/* <ImgStyled  id="logo" src={Logo} alt="Logo ALRIA" /> */}
+                    <MenuList sx={{mt: 20}}>
+                        <Box sx={{ml: -1, mb: 55}}>
+                            {options.map(option => (
+                                <ButtonStyled
+                                    onClick={() =>navigate(option.path)}
+                                    title={option.tooltip}
+                                    icon={option.icon}
+                                    style={"primary"}
+                                />
+                            ))}
+                        </Box>
+                        <Box sx={{ml: -1}}>
+                            <ButtonStyled
+                                onClick={() =>navigate(RoutesEnum.Cite)}
+                                title={"Cite"}
+                                icon={<Quotes size={32} weight="bold" />}
+                                style={"primary"}
+                            />
+                        </Box>
+                        
                     </MenuList>
                 </Container>
-            </Paper>;
+            </PaperStyled>;
 }
 
 export default Menu;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import theme from "../../styles/theme";
-import { Box, Typography, IconButton, Stack } from "@mui/material";
+import { Box, IconButton, Typography } from "@mui/material";
 
 export const Container = styled(Box)`
     background-color: ${theme.palette.primary.main};

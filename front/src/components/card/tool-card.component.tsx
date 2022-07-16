@@ -1,11 +1,6 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { CardActionArea } from '@mui/material';
 import ButtonStyled from '../button/button.component';
-import { CardStyled } from './tool-card.styles';
+import { CardContent, Typography } from '@mui/material';
+import { CardStyled, CardActionAreaStyled } from './tool-card.styles';
 
 interface ToolCardProps {
     onClick: () => void,
@@ -17,7 +12,7 @@ interface ToolCardProps {
 function ToolCard(props: ToolCardProps) {
   return (
     <CardStyled>
-        <CardActionArea>
+        <CardActionAreaStyled>
             <ButtonStyled
                 icon={props.icon}
                 style={"primary"}
@@ -32,7 +27,7 @@ function ToolCard(props: ToolCardProps) {
                     {props.abstract}
                 </Typography>
             </CardContent>
-        </CardActionArea>
+        </CardActionAreaStyled>
     </CardStyled>
   );
 }

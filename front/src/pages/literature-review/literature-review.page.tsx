@@ -1,9 +1,9 @@
-import { Database, PresentationChart, Article, Table } from "phosphor-react";
 import RoutesEnum from "../../utils/enums/routes.enum";
 import { StackStyled } from "./literature-review.styles";
-import DefaultLayout from "../../layout/deafult/default.layout";
 import { Container, Grid, Typography } from "@mui/material";
+import DefaultLayout from "../../layout/deafult/default.layout";
 import ToolCard from "../../components/card/tool-card.component";
+import { Database, PresentationChart, Article, Table } from "phosphor-react";
 
 const options = [
     {

@@ -1,7 +1,12 @@
 import styled from "styled-components";
-import theme from "../../styles/theme";
-import { Card } from "@mui/material";
+import { Card, CardActionArea } from "@mui/material";
 
 export const CardStyled = styled(Card)`
-    max-width: 400px;
+    width: 370px;
+    height: 200px;
+`;
+
+export const CardActionAreaStyled = styled(CardActionArea)`
+    width: 370px;
+    height: 200px;
 `;

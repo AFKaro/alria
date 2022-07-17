@@ -1,0 +1,9 @@
+# Global
+dependency-injector
+mediatr
+requests
+cryptography
+
+# Flask API
+peewee
+flask
